@@ -10,14 +10,14 @@ class Product extends Model
     use SoftDeletes;
     protected $fillable = [
         'name',
-        'price',
         'description',
-        'image_path',
-        'stock'
+        'address',
+        'telephone',
+        'image_path'
     ];
 
     protected $casts = [
-         //'size' => 'array',
+         //
     ];
 
     public function categories()

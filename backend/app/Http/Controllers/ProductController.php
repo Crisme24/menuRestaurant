@@ -52,15 +52,11 @@ class ProductController extends Controller
                 return $category->id;
             })->toArray();
 
-            // $sizeId = [
-            //      "XS", "S", "M", "L", "XL"
-            //  ];
-
             $body = $request->validate([
-                'name' => 'required|string|max:40',
-                'price' => 'required|numeric',
+                'name' => 'required|string|max:50',
                 'description' => 'string',
-                // 'size' => 'required|array|in:' . implode(',', $sizeId),
+                'address' => 'required|string',
+                'telephone' => 'required|string',
                 'categories' => 'array|in:' . implode(',', $categoriesIds)
             ]);
             $body = $request->all();
@@ -84,11 +80,11 @@ class ProductController extends Controller
             // })->toArray();
 
             $body = $request->validate([
-                'name' => 'required|string|max:40',
-                'price' => 'required|numeric',
+                'name' => 'string|max:50',
                 'description' => 'string',
-                'stock' => 'required|numeric',
-                'image_path' => 'required|string',
+                'address' => 'string',
+                'telephone' => 'string',
+                'image_path' => 'string',
                 //'categories' => 'required|array|in:' . implode(',', $categoriesIds)
             ]);
 
